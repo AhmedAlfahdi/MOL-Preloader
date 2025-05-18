@@ -1,0 +1,24 @@
+// ==UserScript==
+// @name         Disable Preloader
+// @namespace    http://your.website.com/
+// @version      0.1
+// @description  Disables the preloader element on the page.
+// @match        *://*/*
+// @grant        none
+// ==/UserScript==
+
+(function() {
+    'use strict';
+
+    // Wait for the DOM to be fully loaded
+    window.addEventListener('DOMContentLoaded', (event) => {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            // Option 1: Hide using CSS display: none
+            preloader.style.display = 'none';
+
+            // Option 2: Remove from the DOM (uncomment the line below to use this option instead)
+            // preloader.remove();
+        }
+    });
+})();
